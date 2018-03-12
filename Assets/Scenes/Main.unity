@@ -124,9 +124,10 @@ GameObject:
   - component: {fileID: 195476166}
   - component: {fileID: 195476165}
   - component: {fileID: 195476164}
+  - component: {fileID: 195476168}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,6 +224,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &195476168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195476163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e60ef2a62263b4c9c6d5246c9ce19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &577579633
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +302,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 577579633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00144, y: -0.0112, z: 0}
+  m_LocalPosition: {x: -0.00144, y: -0.0112, z: 5}
   m_LocalScale: {x: 0.7364219, y: 0.764373, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -310,7 +322,7 @@ GameObject:
   - component: {fileID: 604269080}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,7 +413,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604269075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.146812, y: -4.581869, z: 0}
+  m_LocalPosition: {x: -3.58, y: 1.1, z: -0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
