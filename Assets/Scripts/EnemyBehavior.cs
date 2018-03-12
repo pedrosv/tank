@@ -29,7 +29,6 @@ public class EnemyBehavior : MonoBehaviour
         var dist = Vector2.Distance(transform.position, closestPlayer.transform.position);
         if (dist < minDist)
         {
-            Debug.Log("DISTANCIA MENOR!");
             if (curChangeTime <= 0f || Vector2.Distance(transform.position, curTarget) <= 0)
             {
                 SetNewMoveTarget();
@@ -40,7 +39,6 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            Debug.Log("DISTANCIA MAIOR!");
             transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, moveSpeed * Time.deltaTime);
             Debug.DrawLine(transform.position, closestPlayer.transform.position, Color.red);
         }
