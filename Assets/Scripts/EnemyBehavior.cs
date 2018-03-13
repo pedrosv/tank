@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     public float changeDirTime = 5;
     private float curChangeTime;
     private Vector2 curTarget;
+    public int hp;
 
     void Start()
     {
@@ -43,6 +44,11 @@ public class EnemyBehavior : MonoBehaviour
             Debug.DrawLine(transform.position, closestPlayer.transform.position, Color.red);
         }
         curChangeTime -= Time.deltaTime;
+        
+    }
+
+    private void FixedUpdate()
+    {
         
     }
 

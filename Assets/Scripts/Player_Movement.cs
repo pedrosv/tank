@@ -6,11 +6,7 @@ public class Player_Movement : MonoBehaviour {
 
     private Rigidbody2D rb;
     public float moveSpeed;
-
-    private Vector2 moveInput;
     private Vector2 moveVelocity;
-
- 
 
     // Use this for initialization
     void Start () {
@@ -20,10 +16,27 @@ public class Player_Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveVelocity = moveSpeed * moveInput;
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.forward * 270 * Time.deltaTime);
+        }
 
-	}
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(Vector3.back * 270 * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += transform.right * Time.deltaTime * moveSpeed;
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position -= transform.right * Time.deltaTime * moveSpeed;
+        }
+
+    }
 
     private void FixedUpdate()
     {

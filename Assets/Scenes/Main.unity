@@ -235,6 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e60ef2a62263b4c9c6d5246c9ce19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDist: 0.75
+  moveSpeed: 3
+  changeDirTime: 5
 --- !u!1 &577579633
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &577579634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -302,7 +305,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 577579633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00144, y: -0.0112, z: 5}
+  m_LocalPosition: {x: -0.00144, y: -0.0112, z: 10}
   m_LocalScale: {x: 0.7364219, y: 0.764373, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -320,6 +323,7 @@ GameObject:
   - component: {fileID: 604269077}
   - component: {fileID: 604269076}
   - component: {fileID: 604269080}
+  - component: {fileID: 604269081}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -413,7 +417,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604269075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.58, y: 1.1, z: -0}
+  m_LocalPosition: {x: -3.58, y: 1.1, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
@@ -431,6 +435,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &604269081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 604269075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5960e1b5dc1b00b4ab84ddb0cb49c345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFiring: 0
+  bullet: {fileID: 114113452813442382, guid: 59bf7e7d7cb8f4b48b00f2f6a1c88ac5, type: 2}
+  bulletSpeed: 10
+  timeBetewwnShots: 0.2
+  firePoint: {fileID: 604269079}
 --- !u!1 &1586062833
 GameObject:
   m_ObjectHideFlags: 0
