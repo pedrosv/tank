@@ -21,6 +21,6 @@ public class EnemyGenerator : MonoBehaviour {
 
     void spawnEnemy()
     {
-        var newBall = GameObject.Instantiate(enemy);
+        var newBall = GameObject.Instantiate(enemy, this.transform);
     }
 }

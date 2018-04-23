@@ -14,6 +14,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         curChangeTime = changeDirTime;
         SetNewMoveTarget();
+        hp = 1;
     }
 
     private void SetNewMoveTarget()
@@ -44,7 +45,13 @@ public class EnemyBehavior : MonoBehaviour
             Debug.DrawLine(transform.position, closestPlayer.transform.position, Color.red);
         }
         curChangeTime -= Time.deltaTime;
-        
+
+        if (hp <= 0)
+        {
+            Destroy(this.gameObject);
+            PlayerStats.Kills += 1;
+        }
+
     }
 
     private void FixedUpdate()
@@ -56,5 +63,11 @@ public class EnemyBehavior : MonoBehaviour
     {
         return GameObject.FindGameObjectsWithTag("Player")
             .OrderBy(player => Vector2.Distance(transform.position, player.transform.position)).First();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+            hp--;
     }
 }

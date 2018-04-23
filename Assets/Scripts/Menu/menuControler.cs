@@ -28,7 +28,6 @@ public class menuControler : MonoBehaviour {
             {
                 indicator_position -= 1;
             }
-            Debug.Log(indicator_position +"");
         }
 
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -37,7 +36,6 @@ public class menuControler : MonoBehaviour {
             {
                 indicator_position += 1;
             }
-            Debug.Log(indicator_position + "");
         }
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
