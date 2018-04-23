@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour {
+public class CratesCrontroller : MonoBehaviour {
 
-    public float speed;
-
-
+    int tileHealth;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        tileHealth = 3;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+
+        if (tileHealth == 0)
+        {
+
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "Bullet")
+            tileHealth--;
     }
+
 }

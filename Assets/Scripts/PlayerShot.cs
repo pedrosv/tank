@@ -25,7 +25,7 @@ public class PlayerShot : MonoBehaviour {
 	void Update () {
 
         if (Input.GetKeyDown(KeyCode.Space)){
-            transform.position += transform.right * Time.deltaTime * 5;
+            //transform.position += transform.right * Time.deltaTime * 5;
             isFiring = true;
         }
         if (Input.GetKeyUp(KeyCode.Space)){
@@ -35,9 +35,9 @@ public class PlayerShot : MonoBehaviour {
 
         if (isFiring){
             shotCounter -= Time.deltaTime;
-            if(shotCounter<= 0){
+            if (shotCounter <= 0) {
                 shotCounter = timeBetewwnShots;
-                BulletController newBullet =  Instantiate(bullet, firePoint.position, firePoint.rotation) as BulletController;
+                BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as BulletController;
                 newBullet.speed = bulletSpeed;
             }
         }
