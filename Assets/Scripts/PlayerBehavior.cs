@@ -27,5 +27,6 @@ public class PlayerBehavior : MonoBehaviour {
         if (collision.gameObject.tag == "Enemies")
             health--;
             Destroy(collision.gameObject);
+        }
     }
 }
